@@ -56,14 +56,14 @@ public struct Snackbar: View {
                     )
                     .resizable()
                     .foregroundColor(
-                        .snackbarOnBackgroundColor(data.severity)
+                        Color.snackbarTheme().snackbarOnBackgroundColor(data.severity)
                     )
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 18, height: 18)
 
                     Text(data.message)
                         .foregroundColor(
-                            .snackbarOnBackgroundColor(data.severity)
+                            Color.snackbarTheme().snackbarOnBackgroundColor(data.severity)
                         )
                         .font(font)
                         .frame(alignment: .leading)
@@ -72,7 +72,7 @@ public struct Snackbar: View {
                 .padding(.horizontal, 12)
                 .padding(.vertical, 4)
                 .background(
-                    Color.snackbarBackgroundColor(data.severity)
+                    Color.snackbarTheme().snackbarBackgroundColor(data.severity)
                 )
                 .cornerRadius(cornerRadius)
                 .shadow(

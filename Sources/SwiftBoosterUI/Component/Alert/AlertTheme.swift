@@ -1,69 +1,69 @@
 //
-//  AlertBackgroundColor.swift
+//  AlertTheme.swift
 //
 //
-//  Created by BADR  QABA on 2024-10-19.
+//  Created by BADR QABA on 2024-10-19.
 //
 
 import Foundation
 import SwiftUI
 
-public extension Color {
-    
-    static let alertSuccessBg = themedColor("AlertSuccessColor")
-    static let alertSuccessAccentColor = themedColor("AlertSuccessAccentColor")
-    
-    static let alertErrorBg = themedColor("AlertErrorColor")
-    static let alertErrorAccentColor = themedColor("AlertErrorAccentColor")
-    
-    static let alertInfoBg = themedColor("AlertInfoColor")
-    static let alertInfoAccentColor = themedColor("AlertInfoAccentColor")
-    
-    static let alertWarningBg = themedColor("AlertWarningColor")
-    static let alertWarningAccentColor = themedColor("AlertWarningAccentColor")
-    
-    static let modernError = themedColor("ModernAlertError")
-    static let modernInfo = themedColor("ModernAlertInfo")
-    static let modernAlertDefaultAccent = themedColor("AlertDefaultAccentColor")
-    static let modernSuccess = themedColor("ModernAlertSuccess")
-    static let modernWarning = themedColor("ModernAlertWarning")
-    
-    static func backgroundColor(_ type: AlertSeverity) -> Color {
-        return switch type {
+public struct AlertTheme {
+
+    public let alertSuccessBg = ThemeProvider.color("AlertSuccessColor")
+    public let alertSuccessAccentColor = ThemeProvider.color("AlertSuccessAccentColor")
+
+    public let alertErrorBg = ThemeProvider.color("AlertErrorColor")
+    public let alertErrorAccentColor = ThemeProvider.color("AlertErrorAccentColor")
+
+    public let alertInfoBg = ThemeProvider.color("AlertInfoColor")
+    public let alertInfoAccentColor = ThemeProvider.color("AlertInfoAccentColor")
+
+    public let alertWarningBg = ThemeProvider.color("AlertWarningColor")
+    public let alertWarningAccentColor = ThemeProvider.color("AlertWarningAccentColor")
+
+    public let modernError = ThemeProvider.color("ModernAlertError")
+    public let modernInfo = ThemeProvider.color("ModernAlertInfo")
+    public let modernAlertDefaultAccent = ThemeProvider.color("AlertDefaultAccentColor")
+    public let modernSuccess = ThemeProvider.color("ModernAlertSuccess")
+    public let modernWarning = ThemeProvider.color("ModernAlertWarning")
+
+    public func backgroundColor(_ type: AlertSeverity) -> Color {
+        switch type {
         case .success:
-                .alertSuccessBg
+            alertSuccessBg
         case .error:
-                .alertErrorBg
+            alertErrorBg
         case .info:
-                .alertInfoBg
+            alertInfoBg
         case .warning:
-                .alertWarningBg
+            alertWarningBg
         }
     }
-    
-    static func modernBackgroundColor(_ type: AlertSeverity) -> Color {
-        return switch type {
+
+    public func modernBackgroundColor(_ type: AlertSeverity) -> Color {
+        switch type {
         case .success:
-                .modernSuccess
+            modernSuccess
         case .error:
-                .modernError
+            modernError
         case .info:
-                .modernInfo
+            modernInfo
         case .warning:
-                .modernWarning
+            modernWarning
         }
     }
-    
-    static func alertAccentColor(_ type: AlertSeverity) -> Color {
-        return switch type {
+
+    public func alertAccentColor(_ type: AlertSeverity) -> Color {
+        switch type {
         case .success:
-                .alertSuccessAccentColor
+            alertSuccessAccentColor
         case .error:
-                .alertErrorAccentColor
+            alertErrorAccentColor
         case .info:
-                .alertInfoAccentColor
+            alertInfoAccentColor
         case .warning:
-                .alertWarningAccentColor
+            alertWarningAccentColor
         }
     }
 }

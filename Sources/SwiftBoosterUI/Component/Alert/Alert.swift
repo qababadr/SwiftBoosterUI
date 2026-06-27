@@ -41,8 +41,8 @@ public struct Alert<Content: View>: View {
                             .scaledToFit()
                             .frame(width: 20)
                             .foregroundColor(
-                                alertStyle == .modern ? .modernAlertDefaultAccent :
-                                        .alertAccentColor(severity)
+                                alertStyle == .modern ? .alertTheme().modernAlertDefaultAccent :
+                                        .alertTheme().alertAccentColor(severity)
                             )
                             .padding(.leading, 8)
                             .padding(.vertical, 8)
@@ -52,8 +52,8 @@ public struct Alert<Content: View>: View {
                             .scaledToFit()
                             .frame(width: 20)
                             .foregroundColor(
-                                alertStyle == .modern ? .modernAlertDefaultAccent :
-                                        .alertAccentColor(severity)
+                                alertStyle == .modern ? .alertTheme().modernAlertDefaultAccent :
+                                        .alertTheme().alertAccentColor(severity)
                             )
                             .padding(.leading, 8)
                             .padding(.vertical, 8)
@@ -74,8 +74,8 @@ public struct Alert<Content: View>: View {
                                 .scaledToFit()
                                 .frame(width: 20)
                                 .foregroundColor(
-                                    alertStyle == .modern ? .modernAlertDefaultAccent :
-                                            .alertAccentColor(severity)
+                                    alertStyle == .modern ? .alertTheme().modernAlertDefaultAccent :
+                                            .alertTheme().alertAccentColor(severity)
                                 )
                         }
                         .padding(.all, 8)
@@ -84,9 +84,9 @@ public struct Alert<Content: View>: View {
                 .background {
                     switch alertStyle {
                     case .modern:
-                        Color.modernBackgroundColor(severity)
+                            Color.alertTheme().modernBackgroundColor(severity)
                     case .classic:
-                        Color.backgroundColor(severity)
+                        Color.alertTheme().backgroundColor(severity)
                     }
                 }
                 .transition(.move(edge: .bottom).combined(with: .opacity))

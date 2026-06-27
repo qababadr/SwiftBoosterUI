@@ -13,15 +13,11 @@ extension Color {
         return Theme()
     }
     
-    static func themedColor(_ name: String) -> Color {
-#if SWIFT_PACKAGE
-        if UIColor(named: name) != nil {
-            return Color(name)               // App's Assets.xcassets
-        }
-
-        return Color(name, bundle: .module)  // Package fallback
-#else
-        return Color(name)
-#endif
+    public static func alertTheme() -> AlertTheme {
+        return AlertTheme()
+    }
+    
+    public static func snackbarTheme() -> SnackbarTheme {
+        return SnackbarTheme()
     }
 }

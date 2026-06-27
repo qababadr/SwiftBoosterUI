@@ -2,48 +2,48 @@
 //  SnackbarTheme.swift
 //  CoreUI
 //
-//  Created by BADR  QABA on 2025-10-02.
+//  Created by BADR QABA on 2025-10-02.
 //
+
 import SwiftUI
 
-extension Color {
-    static let snackbarSuccessBackground = themedColor("Success")
-    static let snackbarOnSuccessBackground = themedColor("OnPrimary")
+public struct SnackbarTheme {
 
-    static let snackbarErrorBackground = themedColor("Error")
-    static let snackbarOnErrorBackground = themedColor("OnPrimary")
+    public let snackbarSuccessBackground = ThemeProvider.color("Success")
+    public let snackbarOnSuccessBackground = ThemeProvider.color("OnPrimary")
 
-    static let snackbarInfoBackground = themedColor("Info")
-    static let snackbarOnInfoBackground = themedColor("OnPrimary")
+    public let snackbarErrorBackground = ThemeProvider.color("Error")
+    public let snackbarOnErrorBackground = ThemeProvider.color("OnPrimary")
 
-    static let snackbarWarningBackground = themedColor("Warning")
-    static let snackbarOnWarningBackground = themedColor("OnWarning")
-    
-    public static func snackbarBackgroundColor(_ severity: SnackbarSeverity) -> Color {
-        return switch severity {
+    public let snackbarInfoBackground = ThemeProvider.color("Info")
+    public let snackbarOnInfoBackground = ThemeProvider.color("OnPrimary")
+
+    public let snackbarWarningBackground = ThemeProvider.color("Warning")
+    public let snackbarOnWarningBackground = ThemeProvider.color("OnWarning")
+
+    public func snackbarBackgroundColor(_ severity: SnackbarSeverity) -> Color {
+        switch severity {
         case .success:
-            .snackbarSuccessBackground
+            snackbarSuccessBackground
         case .error:
-            .snackbarErrorBackground
+            snackbarErrorBackground
         case .info:
-            .snackbarInfoBackground
+            snackbarInfoBackground
         case .warning:
-            .snackbarWarningBackground
+            snackbarWarningBackground
         }
     }
-    
-    public static func snackbarOnBackgroundColor(_ severity: SnackbarSeverity)
-        -> Color
-    {
-        return switch severity {
+
+    public func snackbarOnBackgroundColor(_ severity: SnackbarSeverity) -> Color {
+        switch severity {
         case .success:
-            .snackbarOnSuccessBackground
+            snackbarOnSuccessBackground
         case .error:
-            .snackbarOnErrorBackground
+            snackbarOnErrorBackground
         case .info:
-            .snackbarOnInfoBackground
+            snackbarOnInfoBackground
         case .warning:
-            .snackbarOnWarningBackground
+            snackbarOnWarningBackground
         }
     }
 }
