@@ -9,26 +9,32 @@ import SwiftUI
 
 public struct Theme {
 
-    public let background = ThemeProvider.color("Background")
-    public let error = ThemeProvider.color("ErrorDark")
-    public let errorDark = ThemeProvider.color("Error")
-    public let info = ThemeProvider.color("Info")
-    public let onBackground = ThemeProvider.color("OnBackground")
-    public let onPrimary = ThemeProvider.color("OnPrimary")
-    public let onSuccess = ThemeProvider.color("OnSuccess")
-    public let onSurface = ThemeProvider.color("OnSurface")
-    public let onWarning = ThemeProvider.color("OnWarning")
-    public let primary = ThemeProvider.color("Primary")
-    public let primaryLight = ThemeProvider.color("PrimaryLight")
-    public let primaryVariant = ThemeProvider.color("PrimaryVariant")
-    public let secondary = ThemeProvider.color("Secondary")
-    public let success = ThemeProvider.color("Success")
-    public let surface = ThemeProvider.color("Surface")
-    public let surfaceVariant = ThemeProvider.color("SurfaceVariant")
-    public let warning = ThemeProvider.color("Warning")
-    public let drawerBackground = ThemeProvider.color("DrawerBackground")
-    public let selectedDrawerItem = ThemeProvider.color("SelectedDrawerItem")
-    public let gradientBackground1 = ThemeProvider.color("gradientBackground1")
-    public let gradientBackground2 = ThemeProvider.color("gradientBackground2")
-    public let gradientBackground3 = ThemeProvider.color("gradientBackground3")
+    private let provider: ThemeProviding
+
+    public init(provider: ThemeProviding = DefaultThemeProvider()) {
+        self.provider = provider
+    }
+
+    public var background: Color { provider.color("Background") }
+    public var error: Color { provider.color("ErrorDark") }
+    public var errorDark: Color { provider.color("Error") }
+    public var info: Color { provider.color("Info") }
+    public var onBackground: Color { provider.color("OnBackground") }
+    public var onPrimary: Color { provider.color("OnPrimary") }
+    public var onSuccess: Color { provider.color("OnSuccess") }
+    public var onSurface: Color { provider.color("OnSurface") }
+    public var onWarning: Color { provider.color("OnWarning") }
+    public var primary: Color { provider.color("Primary") }
+    public var primaryLight: Color { provider.color("PrimaryLight") }
+    public var primaryVariant: Color { provider.color("PrimaryVariant") }
+    public var secondary: Color { provider.color("Secondary") }
+    public var success: Color { provider.color("Success") }
+    public var surface: Color { provider.color("Surface") }
+    public var surfaceVariant: Color { provider.color("SurfaceVariant") }
+    public var warning: Color { provider.color("Warning") }
+    public var drawerBackground: Color { provider.color("DrawerBackground") }
+    public var selectedDrawerItem: Color { provider.color("SelectedDrawerItem") }
+    public var gradientBackground1: Color { provider.color("gradientBackground1") }
+    public var gradientBackground2: Color { provider.color("gradientBackground2") }
+    public var gradientBackground3: Color { provider.color("gradientBackground3") }
 }

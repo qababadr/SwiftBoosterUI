@@ -9,17 +9,43 @@ import SwiftUI
 
 public struct SnackbarTheme {
 
-    public let snackbarSuccessBackground = ThemeProvider.color("Success")
-    public let snackbarOnSuccessBackground = ThemeProvider.color("OnPrimary")
+    private let provider: ThemeProviding
 
-    public let snackbarErrorBackground = ThemeProvider.color("Error")
-    public let snackbarOnErrorBackground = ThemeProvider.color("OnPrimary")
+    public init(provider: ThemeProviding = DefaultThemeProvider()) {
+        self.provider = provider
+    }
 
-    public let snackbarInfoBackground = ThemeProvider.color("Info")
-    public let snackbarOnInfoBackground = ThemeProvider.color("OnPrimary")
+    public var snackbarSuccessBackground: Color {
+        provider.color("Success")
+    }
 
-    public let snackbarWarningBackground = ThemeProvider.color("Warning")
-    public let snackbarOnWarningBackground = ThemeProvider.color("OnWarning")
+    public var snackbarOnSuccessBackground: Color {
+        provider.color("OnPrimary")
+    }
+
+    public var snackbarErrorBackground: Color {
+        provider.color("Error")
+    }
+
+    public var snackbarOnErrorBackground: Color {
+        provider.color("OnPrimary")
+    }
+
+    public var snackbarInfoBackground: Color {
+        provider.color("Info")
+    }
+
+    public var snackbarOnInfoBackground: Color {
+        provider.color("OnPrimary")
+    }
+
+    public var snackbarWarningBackground: Color {
+        provider.color("Warning")
+    }
+
+    public var snackbarOnWarningBackground: Color {
+        provider.color("OnWarning")
+    }
 
     public func snackbarBackgroundColor(_ severity: SnackbarSeverity) -> Color {
         switch severity {

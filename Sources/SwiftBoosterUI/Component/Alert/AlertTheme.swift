@@ -10,23 +10,63 @@ import SwiftUI
 
 public struct AlertTheme {
 
-    public let alertSuccessBg = ThemeProvider.color("AlertSuccessColor")
-    public let alertSuccessAccentColor = ThemeProvider.color("AlertSuccessAccentColor")
+    private let provider: ThemeProviding
 
-    public let alertErrorBg = ThemeProvider.color("AlertErrorColor")
-    public let alertErrorAccentColor = ThemeProvider.color("AlertErrorAccentColor")
+    public init(provider: ThemeProviding = DefaultThemeProvider()) {
+        self.provider = provider
+    }
 
-    public let alertInfoBg = ThemeProvider.color("AlertInfoColor")
-    public let alertInfoAccentColor = ThemeProvider.color("AlertInfoAccentColor")
+    public var alertSuccessBg: Color {
+        provider.color("AlertSuccessColor")
+    }
 
-    public let alertWarningBg = ThemeProvider.color("AlertWarningColor")
-    public let alertWarningAccentColor = ThemeProvider.color("AlertWarningAccentColor")
+    public var alertSuccessAccentColor: Color {
+        provider.color("AlertSuccessAccentColor")
+    }
 
-    public let modernError = ThemeProvider.color("ModernAlertError")
-    public let modernInfo = ThemeProvider.color("ModernAlertInfo")
-    public let modernAlertDefaultAccent = ThemeProvider.color("AlertDefaultAccentColor")
-    public let modernSuccess = ThemeProvider.color("ModernAlertSuccess")
-    public let modernWarning = ThemeProvider.color("ModernAlertWarning")
+    public var alertErrorBg: Color {
+        provider.color("AlertErrorColor")
+    }
+
+    public var alertErrorAccentColor: Color {
+        provider.color("AlertErrorAccentColor")
+    }
+
+    public var alertInfoBg: Color {
+        provider.color("AlertInfoColor")
+    }
+
+    public var alertInfoAccentColor: Color {
+        provider.color("AlertInfoAccentColor")
+    }
+
+    public var alertWarningBg: Color {
+        provider.color("AlertWarningColor")
+    }
+
+    public var alertWarningAccentColor: Color {
+        provider.color("AlertWarningAccentColor")
+    }
+
+    public var modernError: Color {
+        provider.color("ModernAlertError")
+    }
+
+    public var modernInfo: Color {
+        provider.color("ModernAlertInfo")
+    }
+
+    public var modernAlertDefaultAccent: Color {
+        provider.color("AlertDefaultAccentColor")
+    }
+
+    public var modernSuccess: Color {
+        provider.color("ModernAlertSuccess")
+    }
+
+    public var modernWarning: Color {
+        provider.color("ModernAlertWarning")
+    }
 
     public func backgroundColor(_ type: AlertSeverity) -> Color {
         switch type {

@@ -9,15 +9,15 @@ import SwiftUI
 
 extension Color {
 
-    public static func theme() -> Theme {
-        return Theme()
+    @MainActor public static func theme() -> Theme {
+        Theme(provider: ThemeManager.currentProvider())
     }
-    
-    public static func alertTheme() -> AlertTheme {
-        return AlertTheme()
+
+    @MainActor public static func alertTheme() -> AlertTheme {
+        AlertTheme(provider: ThemeManager.currentProvider())
     }
-    
-    public static func snackbarTheme() -> SnackbarTheme {
-        return SnackbarTheme()
+
+    @MainActor public static func snackbarTheme() -> SnackbarTheme {
+        SnackbarTheme(provider: ThemeManager.currentProvider())
     }
 }

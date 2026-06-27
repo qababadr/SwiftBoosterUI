@@ -5,10 +5,10 @@
 //  Created by BADR  QABA on 2026-06-27.
 //
 
-public enum ThemeProvider {
+import SwiftUI
 
-    public static var color: (String) -> Color = {
-        Color($0, bundle: .module)
-    }
+public protocol ThemeProviding {
+
+    func color(_ name: String) -> Color
 
 }
